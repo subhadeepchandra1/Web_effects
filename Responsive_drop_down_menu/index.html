@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<body>
+  <nav>
+    <div>
+      <i class="fa fa-bars"></i>
+    </div>
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">Drop1 <i class="fa fa-sort-desc"></i></a>
+        <ul>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 2</a></li>
+          <li><a href="#">Product 3</a></li>
+          <li><a href="#">Product 4</a></li>
+          <li><a href="#">Product 5</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Drop2 <i class="fa fa-sort-desc"></i></a>
+        <ul>
+          <li><a href="#">Product 1</a></li>
+          <li><a href="#">Product 2</a></li>
+          <li><a href="#">Product 3</a></li>
+          <li><a href="#">Product 4</a></li>
+          <li><a href="#">Product 5</a></li>
+        </ul>
+      </li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </nav>
+  <script type="text/javascript">
+    $("nav div").click(function(){
+      $("ul").slideToggle();
+      $("ul ul").css("display","none");
+    });
+
+    $("ul li").click(function(){
+      $("ul ul").slideUp();
+      $(this).find('ul').slideToggle();
+    });
+
+    $(window).resize(function(){
+      if($(window).width()>768){
+        $("ul").removeAttr('style');
+      }
+    });
+  </script>
+</body>
+</html>
